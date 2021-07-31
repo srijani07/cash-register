@@ -1,21 +1,24 @@
 var billAmount = document.querySelector("#bill-amount");
 var paidAmount = document.querySelector("#paid-amount");
 var outputArea = document.querySelector(".output-area");
-var billCheck = document.querySelector("#enter-bill");
+var billCheck = document.querySelector("#bill-enter");
 var givenArea = document.querySelector("#given-amount");
 var btnCheck = document.querySelector("#check-btn")
 var paidArea = document.querySelector(".paid-area")
-
+paidArea.style.display = "none";
 
 
 function billHandler() { //checks the entered bill amount
 
-    if(parseInt(billAmount.value) <= 0 || billAmount.value === "")
-    outputArea.innerHTML = "Please enter appropriate input";
 
-    else
-    paidArea.style.display = "block";
-    billCheck.style.display = "none";
+    if(billAmount.value === "" || parseInt(billAmount.value) <=0 ) {
+        outputArea.innerHTML = "Please enter correct bill amount."
+    }
+
+    else {
+paidArea.style.display = "block";
+billCheck.style.display = "none";
+}
 }
 
 function clickHandler() {
@@ -23,8 +26,8 @@ function clickHandler() {
     
 
     //checks if the input paid amount is at least 1 and is a number
-if(parseInt(paidAmount.value) <= 0 || paidAmount.value ==="") {
-    outputArea.innerHTML = "Please enter appropriate input."
+if(parseInt(paidAmount.value) <= 0 || paidAmount.value ==="" || parseInt(billAmount.value) <= 0 || billAmount.value === "") {
+    outputArea.innerHTML = "Please enter appropriate bill amount and/or given cash amount."
 }
 
 

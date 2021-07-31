@@ -6,21 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cash register!</title>
 
-    <style> 
-    table,th,td,tr { border : 1px solid black; }
-    .paid-area { display : none;} /*keeps the "amount paid" area hidden till triggered*/
-    
-    
-    </style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-  <p>Enter the bill amount : <input type = "number" min=1 id="bill-amount"><button id = "enter-bill">Enter</button></p> 
+  <header>Cash Register</header>
+  <p>Bill amount : <input type = "number" id="bill-amount"> <button id="bill-enter">Check</button>
+  
+  </p> 
   
   <div class="paid-area">
-  <p>Enter the amount paid : <input type = "number" min=1  id="paid-amount"> <button id='check-btn'>Check!</button></p></div>
+  <p>Amount paid : <input type = "number" min=1  id="paid-amount"> <button id='check-btn'>Check!</button></p></div>
   <div class="output-area"></div>
   
     <script type="text/javascript" src = "app.js"></script>
+    <footer></footer>
 </body>
 </html>
