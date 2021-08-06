@@ -5,8 +5,9 @@ var billCheck = document.querySelector("#bill-enter");
 var givenArea = document.querySelector("#given-amount");
 var btnCheck = document.querySelector("#check-btn")
 var paidArea = document.querySelector(".paid-area")
+var angryImg = document.querySelector("#angry-img")
 paidArea.style.display = "none";
-
+angryImg.style.display = "none";
 
 function billHandler() { //checks the entered bill amount
 
@@ -37,10 +38,12 @@ else if(parseInt(billAmount.value) === parseInt(paidAmount.value)) {
 }
 
 else if(parseInt(billAmount.value) > parseInt(paidAmount.value)) {
- outputArea.innerHTML = "No return needed. Customer has to pay Rs."+(parseInt(billAmount.value) - parseInt(paidAmount.value))+" more."
+ outputArea.innerHTML = "<br>No return needed. Customer has to pay Rs."+(parseInt(billAmount.value) - parseInt(paidAmount.value))+" more."
+ angryImg.style.display = "block";
 }
 
 else {
+    angryImg.style.display = "none";
 var change = parseInt(paidAmount.value)-parseInt(billAmount.value);
 var notes = [2000,1000,500,200,100,50,20,10,5,2,1];
 var frequency = [];
