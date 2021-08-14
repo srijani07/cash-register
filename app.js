@@ -9,6 +9,10 @@ var angryImg = document.querySelector("#angry-img")
 paidArea.style.display = "none";
 angryImg.style.display = "none";
 
+
+var notes = [2000,1000,500,200,100,50,20,10,5,2,1];
+var frequency = [];
+
 function billHandler() { //checks the entered bill amount
 
 
@@ -45,8 +49,7 @@ else if(parseInt(billAmount.value) > parseInt(paidAmount.value)) {
 else {
     angryImg.style.display = "none";
 var change = parseInt(paidAmount.value)-parseInt(billAmount.value);
-var notes = [2000,1000,500,200,100,50,20,10,5,2,1];
-var frequency = [];
+
 
 for(var i=0;i<notes.length;i++) {
 frequency[i] = Math.floor(change/notes[i]);
@@ -59,13 +62,15 @@ for(var i=0;i<frequency.length;i++) {
     }
 }
 
-//creating the table
-outputArea.innerHTML = "<table><tr><td>Denomination</td><td>"+notes[0]+"</td><td>"+notes[1]+"</td><td>"+notes[2]+"</td><td>"+notes[3]+"</td><td>"+notes[4]+"</td><td>"+notes[5]+"</td><td>"+notes[6]+"</td><td>"+notes[7]+"</td><td>"+notes[8]+"</td><td>"+notes[9]+"</td><td>"+notes[10]+"</tr><tr>"+"<td>Number of notes </td><td>"+frequency[0]+"</td><td>"+frequency[1]+"</td><td>"+frequency[2]+"</td><td>"+frequency[3]+"</td><td>"+frequency[4]+"</td><td>"+frequency[5]+"</td><td>"+frequency[6]+"</td><td>"+frequency[7]+"</td><td>"+frequency[8]+"</td><td>"+frequency[9]+"</td><td>"+frequency[10]+"</td></tr></table><br/>";
 
-
+createTable();
 }
 }
 
+function createTable() {
+outputArea.innerHTML =  "<table><tr><td>Denomination</td><td>"+notes[0]+"</td><td>"+notes[1]+"</td><td>"+notes[2]+"</td><td>"+notes[3]+"</td><td>"+notes[4]+"</td><td>"+notes[5]+"</td><td>"+notes[6]+"</td><td>"+notes[7]+"</td><td>"+notes[8]+"</td><td>"+notes[9]+"</td><td>"+notes[10]+"</td></tr><tr>"+"<td>Number of notes </td><td>"+frequency[0]+"</td><td>"+frequency[1]+"</td><td>"+frequency[2]+"</td><td>"+frequency[3]+"</td><td>"+frequency[4]+"</td><td>"+frequency[5]+"</td><td>"+frequency[6]+"</td><td>"+frequency[7]+"</td><td>"+frequency[8]+"</td><td>"+frequency[9]+"</td><td>"+frequency[10]+"</td></tr></table><br/>";
+
+}
 
 billCheck.addEventListener("click",billHandler);
 btnCheck.addEventListener("click",clickHandler);
